@@ -3,31 +3,31 @@ from datetime import datetime
 import json
 import pprint
 
-""" customersDB = {"Shrek":"1234", "Fiona":"5678", "Donkey":"0000"}
+""" customersDB = {"Shrek":"1234", "Fiona":"5678", "Donkey":"0000"}         # this block functions as our bank records for the clients
 
 with open('clientsDB.json', 'w') as outfile:
     json.dump(customersDB, outfile)   """
 
-with open('clientsDB.json','r') as read_file:
+with open('clientsDB.json','r') as read_file:                               # this block opens our clients records in read more
     records = json.load(read_file)
     pprint.pprint(records)
     print()
 
-currentday= datetime.today().strftime('%b %d, %H:%M')
+currentday= datetime.today().strftime('%b %d, %H:%M')                       # print the current day and time like can be seen on most atm
 print(currentday)
 print()
 
-client = pyip.inputStr('what is your name ? \n').lower().title()
+client = pyip.inputStr('what is your name ? \n').lower().title()            # this block is the equivalent of inserting your debit/credit card in the atm for authentication
 if client in records:
     print()
     print("Welcome {} to E-L Bank \n".format(client))
 else:
     print()
-    print('invalid ID \n')
+    print('invalid ID \n')                                                  # if account/card is invalid, exit
 
 attempts = 3
 
-while attempts != 0:
+while attempts != 0:                                                 # this block takes the user pin and makes sure it's same as assigned to the user, after 3 failed attempts, card is seized
     pin = pyip.inputPassword('kindly enter your pin : \n')
     if records[client]== pin:
         print()
@@ -43,7 +43,7 @@ while attempts != 0:
             print('terminating the session, have a nice day')
             exit()
 
-def transaction():
+def transaction():                                                  # the transaction block, this block offers the authenticated client various banking options (deposit, withdrawal, balance check)
     print()
     print('what transaction do you want to perform ? \n')
     options = pyip.inputMenu(['Deposit', 'Withdrawal', 'Balance Enquiry'],lettered=False, numbered=True)
