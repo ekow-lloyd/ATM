@@ -55,6 +55,13 @@ def transaction():
         print('{} dispensed, have a nice day {}'.format(cashout,client))
 transaction()
 
+print("Do you want to perform other transactions ?\n")
+done=pyip.inputMenu(["Yes","No"],lettered=False,numbered=True)
+if done == 'No':
+    pass
+else:
+    transaction()
+    
 print("thanks for banking with us\n")    
         
 
