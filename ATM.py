@@ -52,7 +52,9 @@ def transaction():
         print("Do you want to perform other transactions ?\n")
         done=pyip.inputMenu(["Yes","No"],lettered=False,numbered=True)
         if done == 'No':
-        pass
+            pass
+        else:
+            transaction()
     if options == 'Withdrawal':
         print("how much would you like to witdraw ?( in multiples of 10)\n\n")
         cashout = pyip.inputInt('enter amount: ')
@@ -60,13 +62,15 @@ def transaction():
         print("Do you want to perform other transactions ?\n")
         done=pyip.inputMenu(["Yes","No"],lettered=False,numbered=True)
         if done == 'No':
-        pass
+            pass
+        else:
+            transaction()
     if options == 'Balance Enquiry':
         print('Current Account - €1980\nSavings Account - €50,000')
         print("Do you want to perform other transactions ?\n")
         done=pyip.inputMenu(["Yes","No"],lettered=False,numbered=True)
         if done == 'No':
-        pass
+            pass
     else:
         transaction()
 transaction()
