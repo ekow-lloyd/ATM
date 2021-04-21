@@ -71,8 +71,6 @@ def transaction():
         transaction()
 transaction()
 
-
-    
 print("thanks for banking with us\n")    
         
 
