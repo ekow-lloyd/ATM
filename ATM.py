@@ -48,7 +48,7 @@ def transaction():
     print('what transaction do you want to perform ? \n')
     options = pyip.inputMenu(['Deposit', 'Withdrawal'],lettered=False, numbered=True)
     if options == 'Deposit':
-        print("kindly put the notes in the tray \n\n***Processing*** \n\nDeposit completed \n\nHave a nice day\n")
+        print("kindly put the notes in the tray \n\n***Processing*** \n\nDeposit completed \n\n")
     if options == 'Withdrawal':
         print("how much would you like to witdraw ?( in multiples of 10)\n\n")
         cashout = pyip.inputInt('enter amount: ')
