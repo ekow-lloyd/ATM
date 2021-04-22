@@ -8,7 +8,7 @@ import pprint
 with open('clientsDB.json', 'w') as outfile:
     json.dump(customersDB, outfile)   """
 
-with open('clientsDB.json','r') as read_file:                               # this block opens our clients records in read more
+with open('clientsDB.json','r') as read_file:                               # this block opens our clients records in read mode
     records = json.load(read_file)
     pprint.pprint(records)
     print()
